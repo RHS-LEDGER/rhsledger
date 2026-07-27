@@ -504,4 +504,22 @@ function acceptCookies(){
   }
 })();
 </script>
+(function() {
+  var KEY = 'rhsledger_cookies_accepted';
+  var banner = document.getElementById('cookie-banner');
+  var btn = document.getElementById('cookie-accept');
+  if (!banner) return;
+  if (localStorage.getItem(KEY) === 'true') {
+    banner.style.display = 'none';
+  }
+  if (btn) {
+    btn.addEventListener('click', function() {
+      localStorage.setItem(KEY, 'true');
+      banner.style.display = 'none';
+    });
+  }
+})();
+</script>
+</body>
+</html>
 </body></html>
